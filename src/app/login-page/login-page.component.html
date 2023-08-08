@@ -1,15 +1,15 @@
 <h1>Application Name</h1>
 <h2>Sign in:</h2>
 
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
     <label for="email">Email:  </label>
-    <input id="email" placeholder="Enter email here">
+    <input id="email" formControlName="email" placeholder="Enter email here">
 
     <br>
     <br>
 
     <label for="password">Password:  </label>
-    <input id="password" placeholder="Enter password here">
+    <input id="password" formControlName="password" placeholder="Enter password here">
 
     <br>
     <br>
@@ -17,3 +17,6 @@
     <button>Login</button>
 
 </form>
+
+<p>{{successMessage}}</p>
+<p>{{errorMessage}}</p>
